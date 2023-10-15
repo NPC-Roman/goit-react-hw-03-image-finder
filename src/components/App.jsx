@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'npm install axios';
+import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
