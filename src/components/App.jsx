@@ -34,10 +34,19 @@ class App extends Component {
       .catch(error => this.setState({ error }))
       .finally(() => this.setState({ loading: false }));
   };
-
+  /*
   componentDidUpdate(_, prevState) {
     if (
       prevState.images !== this.props.images &&
+      this.state.images.totalHits === 0
+    ) {
+      toast('No images');
+    }
+  }
+*/
+  componentDidUpdate(_, prevState) {
+    if (
+      prevState.images !== this.state.images &&
       this.state.images.totalHits === 0
     ) {
       toast('No images');
