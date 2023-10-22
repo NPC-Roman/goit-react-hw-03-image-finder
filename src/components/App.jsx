@@ -29,18 +29,18 @@ class App extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.imageName !== this.state.imageName) {
+    if (
+      prevState.imageName !== this.state.imageName &&
+      prevState.imageName !== this.state.page
+    ) {
       this.getImages();
     }
   }
 
   loadMore = () => {
-    this.setState(
-      ({ page }) => ({
-        page: page + 1,
-      }),
-      this.getImages
-    );
+    this.setState(({ page }) => ({
+      page: page + 1,
+    }));
   };
 
   handleChangeName = imageName => {
